@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+<title>A Simple Address Book</title>
+
+<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet"> 
+<link type="text/css" rel="stylesheet" href="mystyle.css" />
+
+<script src="react.production.min.js" crossorigin></script>
+<script src="react-dom.production.min.js" crossorigin></script>
+<script src="babel.min.js" crossorigin></script>
+
+</head>
+
+<body>
+
+	<div id="AddressBook">
+		<div id="ProviderList"></div>
+		<div id="AddProvider">
+			<div>
+				<h2 id="ProviderHeading">Add a Provider</h2>
+				<form id="AddProviderForm" data-ref="-1">
+					<p id="addLastNameErrorMsg" class="hidden"><small>*Enter a valid last name.</small></p>
+					<input id="addLastName" type="text" placeholder="Last Name" />
+					<p id="addFirstNameErrorMsg" class="hidden"><small>*Enter a valid first name.</small></p>
+					<input id="addFirstName" type="text" placeholder="First Name" />
+					<p id="addEmailErrorMsg" class="hidden"><small>*Enter a valid email address.</small></p>
+					<input id="addEmail" type="email" placeholder="Email Address" />
+					
+					<input id="addSpecialty" type="text" placeholder="Specialty" />
+					<input id="addPractice" type="text" placeholder="Practice Name" />
+					<button id="btnAddProvider" type="button" name="Submit New Provider" onclick="addProvider()">+ Add Provider</button>
+				</form>
+			</div>
+		</div>
+		<div id="btnAdd" onclick="showAdd()">
+			<h1 id="btnAddH">+</h1>
+		</div>
+	</div>
+
+<script type="text/jsx" src="script.js"></script>
+
+</body>
+
+</html>

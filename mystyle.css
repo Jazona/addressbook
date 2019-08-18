@@ -1,0 +1,291 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,body {
+	height: 100%;
+}
+
+body {
+	font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+	font-size: 16px;
+
+	background-color: #cce6f4;
+
+}
+
+button {
+		padding: 1em 1.5em;
+		border: none;
+		outline: none;
+
+		font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+		font-size: 14px;
+		font-weight: 700;
+
+		background-color: #175676;
+		color: white;
+	}
+
+		button:hover {
+			cursor: pointer;
+			background-color: #ba324f;
+		}
+
+input {
+		display: block;
+		width: 100%;
+
+		border: none;
+		outline: none;
+
+		margin-bottom: .75em;
+		padding: .5em;
+		box-sizing: border-box;
+
+		font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+		input:focus {
+			font-weight: 700;
+		}
+
+select {
+		display: block;
+
+		border: none;
+		outline: none;
+		margin-right: 5px;
+		margin-bottom: .75em;
+		padding: .5em;
+		box-sizing: border-box;
+
+		font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+}
+
+
+
+#AddressBook {
+	width: 100%;
+
+	display: flex;
+
+	padding: 2em;
+
+	box-sizing: border-box;
+}
+
+
+
+#AddProvider {
+	flex: 1;
+	margin-left: 2em;
+	min-width: 200px;
+}
+
+	#AddProvider div {
+		padding: 2em;
+
+		background-color: rgba(75,163,195,.25);
+	}
+
+	#AddProvider h2 {
+		margin-bottom: 1em;
+		font-weight: 300;
+	}
+
+	#AddProvider input {
+		display: block;
+		width: 100%;
+
+		border: none;
+		outline: none;
+
+		margin-bottom: .75em;
+		padding: .5em;
+		box-sizing: border-box;
+
+		font-family: 'Nunito', 'Helvetica', 'Arial', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+		#AddProvider input.inerror {
+			outline: 2px solid #d62839;
+			background-color: rgba(214,40,57,.15);
+			color: white;
+		}
+
+		#AddProvider input:focus {
+			font-weight: 700;
+		}
+
+	#AddProvider p {
+		color: #d62839;
+	}
+
+		#AddProvider p.hidden {
+			display: none;
+		}
+
+
+
+#btnAdd {
+	display: none;
+}
+
+
+
+#ListOptions {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+#ProviderList {
+	flex: 2;
+	width: 100%;
+	max-width: 800px;
+}
+
+	#ProviderList button {
+		font-size: 12;
+		padding: .25em 1em;
+		margin-left: 5px;
+	}
+
+		#ProviderList #undoBtn {
+			background-color: #4ba3c3;
+		}
+
+	#ProviderList .provider {
+		margin-bottom: .5em;
+
+		padding: 1em 2em;
+
+		background-color: rgba(75,163,195,.15);
+	}
+
+		#ProviderList .provider:nth-child(even){
+			background-color: rgba(75,163,195,.25);
+		}
+
+		#ProviderList .provider div {
+			display: flex;
+			align-items: baseline;
+			justify-content: space-between;
+		}
+
+			#ProviderList .provider div:last-child {
+				margin-top: 10px;
+				justify-content: flex-end;
+			}
+
+			#ProviderList .provider div :last-child {
+				text-align: right;
+			}
+
+		#ProviderList .provider h3 {
+			font-style: italic;
+		}
+
+@media screen and (max-width: 767px){
+	body {
+		font-size: 12px;
+	}
+
+	#AddressBook {
+		width: 100%;
+
+		display: block;
+
+		padding: .5em;
+
+		box-sizing: border-box;
+	}
+
+
+
+	#AddProvider {
+		position: fixed;
+		top: 0;
+		left: 100%;
+
+		height: 100%;
+		width: 100%;
+
+		margin: 0;
+
+		background-color: #4ba3c3;
+
+		transition: left .35s;
+	}
+
+		#AddProvider div {
+			width: 100%;
+			height: 100%;
+		}
+
+		#AddProvider.reveal {
+			left: 0%;
+
+			transition: left .35s;
+		}
+
+
+	#btnAdd {
+		display: block;
+		position: fixed;
+		right: 10px;
+		bottom: 10px;
+
+		height: 35px;
+		width: 35px;
+
+		text-align: center;
+		font-size: 18px;
+		line-height: 35px;
+
+		border-radius: 50%;
+
+		background-color: #ba324f;
+		color: #cce6f4;
+	}
+
+			#btnAddH.close {
+				position: relative;
+				top: -2px;
+			}
+
+
+
+	
+	#ProviderList .provider {
+		padding: .5em;
+	}
+
+		#ProviderList .provider * {
+			margin-left: .5em;
+			margin-bottom: 5px;
+		}
+
+	#ProviderList .provider div {
+		display: block;
+	}
+
+		#ProviderList .provider div :last-child{
+			text-align: left;
+		}
+
+	#ProviderList .provider h1 {
+		margin-bottom: .35em;
+		margin-left: 0;
+	}
+}
